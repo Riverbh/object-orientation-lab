@@ -370,7 +370,7 @@ const colors = {
 //Code Here 
 
 const colorsCopy = {...colors}
-console.log(colorsCopy)
+// console.log(colorsCopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
@@ -397,7 +397,9 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
-
+ 
+const helensInfo = {...contactInfo, ...shippingInfo}
+// console.log(helensInfo)
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -416,6 +418,18 @@ const shippingInfo = {
 
 //Code Here 
 
+class Vehicle {
+  constructor(capacity, color, mileage){
+    this.capacity = capacity
+    this.color = color
+    this.mileage = mileage
+  }
+  move(miles){
+    this.mileage += miles
+    console.log(this.mileage)
+  }
+
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
@@ -423,6 +437,8 @@ const shippingInfo = {
 
 //Code Here
 
+const myFirstVehicle =  new Vehicle (5, "Forrest Green", 60,000)
+// console.log(myFirstVehicle)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -434,11 +450,23 @@ const shippingInfo = {
 
 //Code Here
 
+class Motorcycle extends Vehicle{
+  constructor(capacity, color, mileage, make, isCool){
+    super(capacity, color, mileage)
+
+    this.make = make
+    this.isCool = isCool
+  }
+}
+
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here 
+
+const myFirstMotorcycle = new Motorcycle (2, `Jet Black`, 3000, `Harley`, true)
+// console.log(myFirstMotorcycle)
 
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
